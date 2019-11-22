@@ -1,12 +1,10 @@
-# kafka manager Dockerfile
+# Kafka Manager Dockerfile
 [kafka manager](https://github.com/yahoo/kafka-manager) is a tool from Yahoo Inc. for managing [Apache Kafka](http://kafka.apache.org).
+## Based on ##
+https://github.com/sheepkiller/kafka-manager-docker
+
 ## Base Docker Image ##
 * [centos:7](https://hub.docker.com/_/centos/)
-
-## RoadMap
-- ~~1.3.1.6 + 1 : defaulting to openjdk~~
-- 1.3.1.6 + 2 : switch to non root user
-- 1.3.1.6 + 3 : switch to alpine linux
 
 ## Howto
 ### Quick Start
@@ -19,7 +17,7 @@ docker run -it --rm  -p 9000:9000 -e ZK_HOSTS="your-zk.domain:2181" -e APPLICATI
 ### Use your own configuration file
 Until 1.3.0.4, you were able to override default configuration file via a docker volume to overi:
 ```
-docker run [...] -v /path/to/confdir:/kafka-manager-${KM_VERSION}/conf [...]
+docker run [...] -v /path/to/confdir:/kafka-manager/conf [...]
 ```
 From > 1.3.0.4, you can specify a configuration file via an environment variable.
 ```
