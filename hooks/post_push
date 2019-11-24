@@ -1,0 +1,5 @@
+#!/bin/sh
+if [ "SOURCE_BRANCH" -eq "master" ]; then
+  docker tag $IMAGE_NAME $DOCKER_REPO:latest
+  docker push $DOCKER_REPO:latest
+fi
